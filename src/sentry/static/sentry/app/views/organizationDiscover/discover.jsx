@@ -14,6 +14,7 @@ import MultipleProjectSelector from 'app/components/organizations/multipleProjec
 import SentryTypes from 'app/sentryTypes';
 import TimeRangeSelector from 'app/components/organizations/timeRangeSelector';
 import BetaTag from 'app/components/betaTag';
+import PageHeader from 'app/components/pageHeader';
 
 import Result from './result';
 import ResultLoading from './result/loading';
@@ -38,7 +39,6 @@ import {
   Body,
   BodyContent,
   HeadingContainer,
-  Heading,
   Sidebar,
   SidebarTabs,
   SavedQueryWrapper,
@@ -397,9 +397,9 @@ export default class OrganizationDiscover extends React.Component {
               <React.Fragment>
                 <div>
                   <HeadingContainer>
-                    <Heading>
+                    <PageHeader>
                       {t('Discover')} <BetaTag />
-                    </Heading>
+                    </PageHeader>
                   </HeadingContainer>
                 </div>
                 <Intro updateQuery={this.updateAndRunQuery} />

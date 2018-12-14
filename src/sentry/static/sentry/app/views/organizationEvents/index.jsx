@@ -18,6 +18,7 @@ import MultipleEnvironmentSelector from 'app/components/organizations/multipleEn
 import MultipleProjectSelector from 'app/components/organizations/multipleProjectSelector';
 import SentryTypes from 'app/sentryTypes';
 import TimeRangeSelector from 'app/components/organizations/timeRangeSelector';
+import PageHeader from 'app/components/pageHeader';
 import space from 'app/styles/space';
 import {
   updateProjects,
@@ -306,16 +307,11 @@ const Body = styled('div')`
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: ${space(2)} ${space(4)} ${space(3)};
+  padding: ${space(3)} ${space(4)};
 `;
 
-const HeaderTitle = styled('h4')`
+const HeaderTitle = styled(PageHeader)`
   flex: 1;
-  font-size: ${p => p.theme.headerFontSize};
-  line-height: ${p => p.theme.headerFontSize};
-  font-weight: normal;
-  color: ${p => p.theme.gray4};
-  margin: 0;
 `;
 
 const StyledSearchBar = styled(SearchBar)`
