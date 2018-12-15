@@ -5,6 +5,7 @@ import {browserHistory} from 'react-router';
 import {Box} from 'grid-emotion';
 import {omit, isEqual} from 'lodash';
 import qs from 'query-string';
+import styled from 'react-emotion';
 
 import {analytics} from 'app/utils/analytics';
 import SentryTypes from 'app/sentryTypes';
@@ -20,6 +21,8 @@ import {t, tct} from 'app/locale';
 import {Panel, PanelBody, PanelHeader} from 'app/components/panels';
 import EmptyStateWarning from 'app/components/emptyStateWarning';
 import ReleaseEmptyState from 'app/views/projectReleases/releaseEmptyState';
+import PageHeader from 'app/components/pageHeader';
+import space from 'app/styles/space';
 
 import ReleaseList from 'app/views/projectReleases/releaseList';
 import withEnvironmentInQueryString from 'app/utils/withEnvironmentInQueryString';
@@ -217,9 +220,9 @@ const ProjectReleases = createReactClass({
     return (
       <div className="ref-project-releases">
         <GuideAnchor target="releases" type="invisible" />
-        <div className="row release-list-header">
+        <div className="row">
           <div className="col-sm-7">
-            <h3>{t('Releases')}</h3>
+            <StyledPageHeader>{t('Releases')}</StyledPageHeader>
           </div>
           <div className="col-sm-5 release-search">
             <SearchBar
@@ -251,3 +254,8 @@ const ProjectReleases = createReactClass({
 
 export {ProjectReleases}; // For tests
 export default withEnvironmentInQueryString(ProjectReleases);
+
+const StyledPageHeader = styled(PageHeader)`
+  margin-top: ${space(1)};
+  margin-bottom: ${space(3)};
+`;
